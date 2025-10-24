@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jay & Rutvi - Wedding Invitation</title>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&family=Playfair+Display:wght@600&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            /* background: #fff9f4 url('images/body-bg2.jpg') repeat; */
+            background: #fff9f4 url('images/body-bg2.jpg') no-repeat center center;
+            background-size: cover;
+            /* min-height: 100vh; */
+
+        }
+
+        .invitation-container {
+            /* max-width: 900px; */
+            max-width: 75%;
+            margin: 0 auto;
+            background: #fffdf7;
+            border-radius: 20px;
+            border: 12px double #d4af37;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            /* background: url(images/body-bg3.png) center / cover; */
+            background: url(images/body-bg5.png) center / cover;
+            /* color: white; */
+            text-align: center;
+            padding: 10px 20px;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            /* background: rgba(0,0,0,0.55); */
+        }
+
+        .header>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .ganesh-symbol {
+            width: 100%;
+            text-align: center;
+        }
+
+
+        .invitation-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 42px;
+            color: #f80000;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+            margin: 350px 25px 0px 0px;
+        }
+
+        .subtitle {
+            font-size: 36px;
+            margin-top: -2px;
+            font-weight: 400;
+            color: #f80000;
+        }
+
+        .main-content {
+            padding: 20px;
+            text-align: center;
+            background: url('https://cdn.pixabay.com/photo/2017/03/24/07/28/pattern-2172906_1280.png') no-repeat center/contain;
+        }
+
+        .bride-groom {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .bride-photo img,
+        .groom-photo img {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid #d4af37;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.3rem;
+            color: #b8860b;
+            margin: 10px 0;
+        }
+
+        .hearts {
+            font-size: 2.8rem;
+            color: #ff6b6b;
+            animation: heartbeat 2s infinite;
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        .event-details {
+            background: linear-gradient(135deg, #fff7d1, #fff1a8);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+
+        .event-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #a67c00;
+            margin-bottom: 30px;
+        }
+
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        .event-item {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border: 2px solid #f7e7a3;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .event-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .event-item img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+
+        .event-name {
+            font-family: 'Playfair Display', serif;
+            color: #d4af37;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .gujarati-quote {
+            background: linear-gradient(135deg, #9c27b0, #673ab7);
+            color: white;
+            padding: 35px;
+            border-radius: 15px;
+            margin: 40px 0;
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .rsvp-section {
+            background: #fffef8;
+            padding: 30px;
+            border: 2px dashed #d4af37;
+            border-radius: 15px;
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #2d3436, #636e72);
+            color: white;
+            text-align: center;
+            padding: 25px;
+            border-top: 6px solid #d4af37;
+        }
+
+        @media (max-width: 992px) {
+            .invitation-container {
+                max-width: 90%;
+                border-width: 8px;
+            }
+
+            .invitation-title {
+                font-size: 30px;
+                margin: 180px 0 0 0;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .main-content {
+                padding: 30px 20px;
+            }
+
+            .bride-groom {
+                gap: 20px;
+                margin: 30px 0;
+            }
+
+            .bride-photo img,
+            .groom-photo img {
+                width: 140px;
+                height: 140px;
+            }
+
+            .name {
+                font-size: 1.8rem;
+            }
+
+            .event-details {
+                padding: 30px 20px;
+            }
+
+            .event-name {
+                font-size: 1.1rem;
+            }
+
+            .gujarati-quote {
+                font-size: 1rem;
+                padding: 25px;
+            }
+
+            .rsvp-section {
+                padding: 25px;
+            }
+        }
+
+        /* Mobile devices (portrait) */
+        @media (max-width: 768px) {
+            body {
+                background-size: cover;
+            }
+
+            .invitation-container {
+                max-width: 95%;
+                border-width: 6px;
+                border-radius: 10px;
+            }
+
+            .header {
+                padding: 20px;
+            }
+
+            .invitation-title {
+                font-size: 36px;
+                margin: 230px 10px 0px 0px;
+            }
+
+            .subtitle {
+                font-size: 20px;
+            }
+
+            .bride-groom {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .bride-photo img,
+            .groom-photo img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .hearts {
+                font-size: 2.2rem;
+                margin: 10px 0;
+            }
+
+            .event-details {
+                padding: 20px 15px;
+                margin: 30px 0;
+            }
+
+            .event-title {
+                font-size: 1.5rem;
+            }
+
+            .event-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .event-item img {
+                width: 80px;
+                height: 80px;
+            }
+
+            .event-item p {
+                font-size: 0.9rem;
+            }
+
+            .gujarati-quote {
+                font-size: 0.95rem;
+                padding: 20px;
+                text-align: center;
+            }
+
+            .rsvp-section {
+                padding: 20px;
+                font-size: 0.9rem;
+            }
+
+            .footer {
+                padding: 15px;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Extra small screens (phones under 480px) */
+        @media (max-width: 480px) {
+            .invitation-title {
+                font-size: 22px;
+                margin: 150px 10px 0px 0px;
+            }
+
+            .subtitle {
+                font-size: 0.9rem;
+            }
+
+            .bride-photo img,
+            .groom-photo img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .name {
+                font-size: 1.5rem;
+            }
+
+            .event-title {
+                font-size: 1.3rem;
+            }
+
+            .gujarati-quote {
+                font-size: 0.9rem;
+                padding: 15px;
+            }
+
+            .rsvp-section {
+                font-size: 0.85rem;
+            }
+
+            .footer p {
+                font-size: 0.8rem;
+            }
+        }
+        /* Gujarati Blessing Slider */
+.gujarati-slider {
+  background: linear-gradient(135deg, #9c27b0, #673ab7);
+  color: white;
+  padding: 40px 20px;
+  border-radius: 15px;
+  margin: 50px auto;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.slider-container {
+  position: relative;
+}
+
+.slide {
+  display: none;
+  animation: fade 1s ease-in-out;
+}
+
+.slide.active {
+  display: block;
+}
+
+@keyframes fade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+.slide img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  margin-bottom: 15px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.4);
+}
+
+.quote {
+  font-family: 'Noto Sans Gujarati', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.author {
+  font-weight: 600;
+  color: #ffe082;
+}
+
+/* Dots navigation */
+.slider-dots {
+  margin-top: 20px;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 6px;
+  background-color: rgba(255,255,255,0.6);
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active,
+.dot:hover {
+  background-color: #ffd54f;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .quote {
+    font-size: 1rem;
+  }
+  .slide img {
+    width: 80px;
+    height: 80px;
+  }
+}
+    </style>
+   
+</head>
+
+<body>
+
+    <div class="invitation-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="ganesh-symbol">
+                <h1 class="invitation-title">Wedding Invitation</h1>
+                <p class="subtitle">શુભ વિવાહ &nbsp;&nbsp;</p>
+            </div>
+
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="bride-groom">
+                <div class="groom-photo">
+                    <img src="images/jay.jpeg" alt="Groom jay">
+                    <h2 class="name">Jay</h2>
+                    <p>S/o Shri Kiran bhatt &amp; Smt. shradha Bhatt</p>
+                </div>
+                <div class="hearts">💞</div>
+                <div class="bride-photo">
+                    <img src="images/rutvi.jpeg" alt="Bride Rutvi">
+                    <h2 class="name">Rutvi</h2>
+                    <p>D/o Shri Bipin Pandya &amp; Smt. Urvshi Pandya</p>
+                </div>
+
+            </div>
+
+            <!-- Events -->
+            <section class="event-details">
+                <h3 class="event-title">Wedding Ceremonies</h3>
+                <div class="event-grid">
+                    <div class="event-item">
+                        <img src="images/ganpti.jpg" alt="Ganesh Pooja">
+                        <h4 class="event-name">Ganesh Pooja</h4>
+                        <p>Friday, 15th March 2025<br>6:00 PM Onwards<br><b>Shree Swaminarayan Hall, Ahmedabad</b></p>
+                    </div>
+                    <div class="event-item">
+                        <img src="images/sangeet.jpg" alt="Garba">
+                        <h4 class="event-name">Garba /Sangeet </h4>
+                        <p>Saturday, 16th March 2025<br>4:00 PM Onwards<br><b>Bride's Residence, Satellite</b></p>
+                    </div>
+                    <div class="event-item">
+                        <img src="images/jaan.jpg" alt="jaan prastan">
+                        <h4 class="event-name">jaan prasthan</h4>
+                        <p>Sunday, 17th March 2025<br>10:00 AM Onwards<br><b>Both Residences</b></p>
+                    </div>
+                    <div class="event-item">
+                        <img src="images/wedding.jpg" alt="hastmeap">
+                        <h4 class="event-name">Wedding / hastmeap</h4>
+                        <p>Monday, 18th March 2025<br>7:00 AM (Muhurat)<br><b>Shree Krishna Banquet, SG Highway</b></p>
+                    </div>
+                    <!-- <div class="event-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2438/2438815.png" alt="">
+                    <h4 class="event-name">Reception</h4>
+                    <p>Monday, 18th March 2025<br>7:00 PM Onwards<br><b>Shree Krishna Banquet</b></p>
+                </div> -->
+                </div>
+            </section>
+
+            <!-- Gujarati Blessing -->
+            <!-- <section class="gujarati-quote">
+            “હાથ માં હાથ, દિલ થી દિલ જોડાયા —<br>પ્રેમની સફર હવે શરુ થવાની છે.”<br><br>
+            “જય શ્રી ગણેશ — આપના આશીર્વાદથી અમારું નવું જીવન શરૂઆત કરશે.”
+        </section> -->
+            <section class="gujarati-slider">
+                <div class="slider-container">
+                    <div class="slide active">
+                        <img src="images/jay.jpeg" alt="Blessing 1">
+                        <p class="quote">“હાથ માં હાથ, દિલ થી દિલ જોડાયા — પ્રેમની સફર હવે શરુ થવાની છે.”</p>
+                        <h4 class="author">– પરિવારના આશીર્વાદથી</h4>
+                    </div>
+                    <div class="slide">
+                        <img src="images/jay.jpeg" alt="Blessing 2">
+                        <p class="quote">“જય શ્રી ગણેશ — આપના આશીર્વાદથી અમારું નવું જીવન શરૂઆત કરશે.”</p>
+                        <h4 class="author">– પ્રેમથી, પંડ્યા પરિવાર</h4>
+                    </div>
+                    <div class="slide">
+                        <img src="images/jay.jpeg" alt="Blessing 3">
+                        <p class="quote">“સુખી દામ્પત્ય જીવન માટે હાર્દિક શુભકામનાઓ.”</p>
+                        <h4 class="author">– ભાવથી, ભટ્ટ પરિવાર</h4>
+                    </div>
+                </div>
+
+                <!-- Navigation dots -->
+                <div class="slider-dots">
+                    <span class="dot active" onclick="showSlide(0)"></span>
+                    <span class="dot" onclick="showSlide(1)"></span>
+                    <span class="dot" onclick="showSlide(2)"></span>
+                </div>
+            </section>
+            <!-- RSVP -->
+            <section class="rsvp-section">
+                <h3>RSVP</h3>
+                <p>Your presence is the greatest blessing for us.</p>
+                <p><b>Kiran bhatt:</b> +91 9998321200 | <b>Shradha Bhatt:</b> +91 9714730577</p>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>✨ May Lord Ganesha bless this beautiful union ✨</p>
+            <p>With Love — The bhatt & Pandya Families</p>
+        </footer>
+    </div>
+
+</body>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  let currentSlide = 0;
+  const slides = document.querySelectorAll(".slide");
+  const dots = document.querySelectorAll(".dot");
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("active", i === index);
+      dots[i].classList.toggle("active", i === index);
+    });
+    currentSlide = index;
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  // Auto change every 4 sec
+  setInterval(nextSlide, 4000);
+
+  // Optional: Add click handling for manual navigation
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => showSlide(index));
+  });
+});
+</script>
+</html>

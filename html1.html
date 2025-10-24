@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gujarati Wedding Invitation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .invitation-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Decorative border */
+        .invitation-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, #d4af37, #ffd700, #d4af37);
+            padding: 8px;
+            z-index: -1;
+            border-radius: 20px;
+        }
+
+        .invitation-content {
+            background: white;
+            border-radius: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-conic-gradient(from 0deg, transparent 0deg, rgba(255,255,255,0.1) 1deg, transparent 2deg);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .ganesh-symbol {
+            font-size: 3rem;
+            color: #ffd700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .invitation-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .couple-names {
+            margin-bottom: 40px;
+        }
+
+        .bride-groom {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .name-section {
+            flex: 1;
+            min-width: 250px;
+            margin: 20px;
+        }
+
+        .name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #d4af37;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .parents-names {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .hearts {
+            font-size: 3rem;
+            color: #ff6b6b;
+            margin: 0 20px;
+            animation: heartbeat 2s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Event Details */
+        .event-details {
+            background: linear-gradient(135deg, #ffeaa7, #fdcb6e);
+            margin: 40px 0;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .event-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #d63031;
+            margin-bottom: 30px;
+        }
+
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .event-item {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .event-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .event-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #d4af37;
+            margin-bottom: 15px;
+        }
+
+        .event-info {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .event-date {
+            font-weight: 600;
+            color: #e17055;
+            font-size: 1.1rem;
+        }
+
+        .event-time {
+            font-weight: 500;
+            color: #00b894;
+        }
+
+        .event-venue {
+            color: #0984e3;
+            font-weight: 500;
+        }
+
+        /* Gujarati Quote */
+        .gujarati-quote {
+            background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+            color: white;
+            padding: 30px;
+            margin: 40px 0;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .quote-text {
+            font-size: 1.3rem;
+            font-style: italic;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .quote-author {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        /* RSVP Section */
+        .rsvp-section {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .rsvp-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2d3436;
+            margin-bottom: 20px;
+        }
+
+        .rsvp-text {
+            color: #636e72;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            min-width: 200px;
+        }
+
+        .contact-name {
+            font-weight: 600;
+            color: #2d3436;
+            margin-bottom: 5px;
+        }
+
+        .contact-phone {
+            color: #0984e3;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #2d3436, #636e72);
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .footer-blessing {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-text {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        /* Decorative Elements */
+        .mandala-decoration {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            opacity: 0.1;
+            background: radial-gradient(circle, #d4af37 30%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .mandala-1 {
+            top: 20px;
+            left: 20px;
+        }
+
+        .mandala-2 {
+            bottom: 20px;
+            right: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .invitation-container {
+                margin: 10px;
+            }
+
+            .main-content {
+                padding: 30px 20px;
+            }
+
+            .bride-groom {
+                flex-direction: column;
+            }
+
+            .hearts {
+                transform: rotate(90deg);
+                margin: 20px 0;
+            }
+
+            .name {
+                font-size: 2rem;
+            }
+
+            .invitation-title {
+                font-size: 2rem;
+            }
+
+            .event-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Animation for entrance */
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="invitation-container fade-in">
+        <div class="invitation-content">
+            <!-- Decorative Elements -->
+            <div class="mandala-decoration mandala-1"></div>
+            <div class="mandala-decoration mandala-2"></div>
+
+            <!-- Header -->
+            <header class="header">
+                <div class="header-content">
+                    <div class="ganesh-symbol">🕉️</div>
+                    <h1 class="invitation-title">Wedding Invitation</h1>
+                    <p class="subtitle">शुभ विवाह</p>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Couple Names -->
+                <section class="couple-names">
+                    <div class="bride-groom">
+                        <div class="name-section">
+                            <h2 class="name">Priya</h2>
+                            <div class="parents-names">
+                                D/o Shri Ramesh Patel<br>
+                                & Smt. Sunita Patel
+                            </div>
+                        </div>
+                        <div class="hearts">💕</div>
+                        <div class="name-section">
+                            <h2 class="name">Arjun</h2>
+                            <div class="parents-names">
+                                S/o Shri Vikash Shah<br>
+                                & Smt. Kavita Shah
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Event Details -->
+                <section class="event-details">
+                    <h3 class="event-title">Wedding Ceremonies</h3>
+                    <div class="event-grid">
+                        <div class="event-item">
+                            <h4 class="event-name">Engagement</h4>
+                            <div class="event-info">
+                                <div class="event-date">Friday, 15th March 2025</div>
+                                <div class="event-time">6:00 PM Onwards</div>
+                                <div class="event-venue">Shree Swaminarayan Hall<br>Ahmedabad</div>
+                            </div>
+                        </div>
+                        <div class="event-item">
+                            <h4 class="event-name">Mehendi Ceremony</h4>
+                            <div class="event-info">
+                                <div class="event-date">Saturday, 16th March 2025</div>
+                                <div class="event-time">4:00 PM Onwards</div>
+                                <div class="event-venue">Bride's Residence<br>Satelite, Ahmedabad</div>
+                            </div>
+                        </div>
+                        <div class="event-item">
+                            <h4 class="event-name">Haldi Ceremony</h4>
+                            <div class="event-info">
+                                <div class="event-date">Sunday, 17th March 2025</div>
+                                <div class="event-time">10:00 AM Onwards</div>
+                                <div class="event-venue">Both Residences</div>
+                            </div>
+                        </div>
+                        <div class="event-item">
+                            <h4 class="event-name">Wedding Ceremony</h4>
+                            <div class="event-info">
+                                <div class="event-date">Monday, 18th March 2025</div>
+                                <div class="event-time">7:00 AM (Muhurat)</div>
+                                <div class="event-venue">Shree Krishna Banquet<br>S.G. Highway, Ahmedabad</div>
+                            </div>
+                        </div>
+                        <div class="event-item">
+                            <h4 class="event-name">Reception</h4>
+                            <div class="event-info">
+                                <div class="event-date">Monday, 18th March 2025</div>
+                                <div class="event-time">7:00 PM Onwards</div>
+                                <div class="event-venue">Shree Krishna Banquet<br>S.G. Highway, Ahmedabad</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Gujarati Quote -->
+                <section class="gujarati-quote">
+                    <div class="quote-text">
+                        "Two hearts become one, two families unite as one<br>
+                        Love, laughter, and happily ever after begins today"
+                    </div>
+                    <div class="quote-author">- Ancient Gujarati Blessing</div>
+                </section>
+
+                <!-- RSVP Section -->
+                <section class="rsvp-section">
+                    <h3 class="rsvp-title">RSVP</h3>
+                    <p class="rsvp-text">
+                        Your presence is the greatest gift we could ask for. Please let us know if you'll be joining us on our special day.
+                    </p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-name">Ramesh Patel (Bride's Father)</div>
+                            <div class="contact-phone">+91 98765 43210</div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-name">Vikash Shah (Groom's Father)</div>
+                            <div class="contact-phone">+91 87654 32109</div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="footer-blessing">
+                    May Lord Ganesha bless this union
+                </div>
+                <div class="footer-text">
+                    With love and blessings from both families
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        // Add some interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click effect to event items
+            const eventItems = document.querySelectorAll('.event-item');
+            eventItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    this.style.transform = 'scale(1.05)';
+                    setTimeout(() => {
+                        this.style.transform = 'translateY(-5px)';
+                    }, 200);
+                });
+            });
+
+            // Add animation delays
+            const elements = document.querySelectorAll('.event-item, .contact-item');
+            elements.forEach((element, index) => {
+                element.style.animationDelay = `${index * 0.1}s`;
+                element.classList.add('fade-in');
+            });
+        });
+    </script>
+</body>
+</html>
